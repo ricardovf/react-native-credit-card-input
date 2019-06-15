@@ -312,6 +312,7 @@ const POSTAL_CODE_INPUT_WIDTH = 120; // https://github.com/yannickcr/eslint-plug
 
   render() {
     const {
+<<<<<<< HEAD
       cardImageFront,
       cardImageBack,
       values: { number, expiry, cvc, name, type },
@@ -320,6 +321,12 @@ const POSTAL_CODE_INPUT_WIDTH = 120; // https://github.com/yannickcr/eslint-plug
       cardScale,
       cardFontFamily,
       cardBrandIcons
+=======
+      cardImageFront, cardImageBack, inputContainerStyle,
+      values: { number, expiry, cvc, name, type }, focused,
+      allowScroll, requiresName, requiresCVC, requiresPostalCode,
+      cardScale, cardFontFamily, cardBrandIcons, viewPlaceholder
+>>>>>>> Pass placeholders to CardView
     } = this.props;
 
     return (
@@ -338,8 +345,35 @@ const POSTAL_CODE_INPUT_WIDTH = 120; // https://github.com/yannickcr/eslint-plug
           cvc={cvc}
           placeholder={viewPlaceholder}
         />
+<<<<<<< HEAD
 
         {this.renderForm()}
+=======
+        <ScrollView ref="Form"
+          horizontal
+          keyboardShouldPersistTaps="always"
+          scrollEnabled={allowScroll}
+          showsHorizontalScrollIndicator={false}
+          style={s.form}>
+          <CCInput {...this._inputProps("number")}
+            keyboardType="numeric"
+            containerStyle={[s.inputContainer, inputContainerStyle, { width: CARD_NUMBER_INPUT_WIDTH }]} />
+          <CCInput {...this._inputProps("expiry")}
+            keyboardType="numeric"
+            containerStyle={[s.inputContainer, inputContainerStyle, { width: EXPIRY_INPUT_WIDTH }]} />
+          { requiresCVC &&
+            <CCInput {...this._inputProps("cvc")}
+              keyboardType="numeric"
+              containerStyle={[s.inputContainer, inputContainerStyle, { width: CVC_INPUT_WIDTH }]} /> }
+          { requiresName &&
+            <CCInput {...this._inputProps("name")}
+              containerStyle={[s.inputContainer, inputContainerStyle, { width: NAME_INPUT_WIDTH }]} /> }
+          { requiresPostalCode &&
+            <CCInput {...this._inputProps("postalCode")}
+              keyboardType="numeric"
+              containerStyle={[s.inputContainer, inputContainerStyle, { width: POSTAL_CODE_INPUT_WIDTH }]} /> }
+        </ScrollView>
+>>>>>>> Pass placeholders to CardView
       </View>
     );
   }
