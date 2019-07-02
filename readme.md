@@ -1,4 +1,10 @@
 
+# Forked and merged 3 changes
+
+https://github.com/sbycrosz/react-native-credit-card-input/pull/144
+https://github.com/sbycrosz/react-native-credit-card-input/pull/120
+https://github.com/sbycrosz/react-native-credit-card-input/pull/137
+
 # React Native Credit Card Input
 Easy (and good looking) credit-card input for your React Native Project 💳 💳
 
